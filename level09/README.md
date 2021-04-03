@@ -1,0 +1,6 @@
+# The way we've solved this
+
+1. After logging into the **level09** user, we, once again, can see one binary file, named `level09`, and one text file, named `token`. This time we can see the content of the token file, but it seems to be broken. So, maybe we should play around with the `level09` executable a little bit.
+2. After some time we can tell the algorithm, which lies behind level09 executable: it basically shifts each symbol in ASCII table based on it position in input string relative to the first symbol (i.e. you have input string "abc", symbol "a" will have zero shift, because it's first, symbol "b" will have shift equivalent to 1, so it'll become "c", and symbol "c" will have shift equivalent to 2, so it'll become "e", you've got the point). Now, when we know it, we can suggest, what happened with the `token` file content - it has been "encrypted" (if we can call bunch of basic shifts an encryption).
+3. Apparently, we need to decrypt it. We'll write small python program, which will do the "decryption". That's how we got token for access to the **flag09** user: `f3iji1ju5yuevaus41q1afiuq`.
+4. Let's log into **flag09** user, and launch `getflag` command to get the next flag: `s5cAJpM8ev6XHw998pRWG728z`.

